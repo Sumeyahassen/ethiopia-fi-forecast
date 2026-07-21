@@ -77,13 +77,11 @@ Run in order:
 - **Impact modeling approach:** ...
 - **Forecasting approach:** ...
 ## Task Status
-
 - [x] Task 1 — Data Exploration & Enrichment
 - [x] Task 2 — Exploratory Data Analysis
-- [ ] Task 3 — Event Impact Modeling
+- [x] Task 3 — Event Impact Modeling
 - [ ] Task 4 — Forecasting
 - [ ] Task 5 — Dashboard
-
 ## Team
 
 Data Scientist: [Your Name]
