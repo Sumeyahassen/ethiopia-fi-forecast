@@ -51,10 +51,10 @@ both single-sheet and multi-sheet formats.
 
 Run in order:
 1. `01_data_exploration.ipynb` — Task 1: schema exploration & enrichment
-2. `02_eda.ipynb` — Task 2: exploratory data analysis
+2. `02_eda.ipynb` — Task 2: EDA covering Access/Usage trends, event timeline,
+   correlation analysis, and 5+ key insights
 3. `03_impact_modeling.ipynb` — Task 3: event impact modeling
 4. `04_forecasting.ipynb` — Task 4: forecasting Access & Usage
-
 ## Running the Dashboard
 
     streamlit run dashboard/app.py
@@ -66,15 +66,20 @@ Run in order:
 ## Methodology Summary
 
 *(fill in as you complete each task — 2-3 sentences each)*
-- **Data enrichment:** ...
-- **EDA key findings:** ...
+- **Data enrichment:** Enriched the starter dataset with [N] additional
+  observations, [N] events, and [N] impact_links sourced from [key sources,
+  e.g. NBE, GSMA, Findex microdata]. See `data_enrichment_log.md` for details.
+- **EDA key findings:** Account ownership grew from 14% (2011) to 49% (2024)
+  but decelerated sharply in 2021-2024 (+3pp) despite Telebirr/M-Pesa mobile
+  money expansion — likely reflecting overlap between mobile money and
+  existing bank account holders rather than net-new inclusion. [Add 1-2 more
+  sentences on your strongest correlation/gender-gap/infrastructure findings.]
 - **Impact modeling approach:** ...
 - **Forecasting approach:** ...
-
 ## Task Status
 
 - [x] Task 1 — Data Exploration & Enrichment
-- [ ] Task 2 — Exploratory Data Analysis
+- [x] Task 2 — Exploratory Data Analysis
 - [ ] Task 3 — Event Impact Modeling
 - [ ] Task 4 — Forecasting
 - [ ] Task 5 — Dashboard
