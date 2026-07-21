@@ -45,7 +45,7 @@ Place the starter dataset in `data/raw/`:
 The loader in `src/data_loader.py` auto-detects file type and handles
 both single-sheet and multi-sheet formats.
 
-## Running the Notebooks
+### Running the Notebooks
 
     jupyter notebook notebooks/
 
@@ -53,9 +53,10 @@ Run in order:
 1. `01_data_exploration.ipynb` — Task 1: schema exploration & enrichment
 2. `02_eda.ipynb` — Task 2: EDA covering Access/Usage trends, event timeline,
    correlation analysis, and 5+ key insights
-3. `03_impact_modeling.ipynb` — Task 3: event impact modeling
-4. `04_forecasting.ipynb` — Task 4: forecasting Access & Usage
-## Running the Dashboard
+3. `03_impact_modeling.ipynb` — Task 3: event-indicator impact matrix,
+   validated against observed mobile money growth
+4. `04_forecasting.ipynb` — Task 4: Access & Usage forecasts for 2025-2027
+   with pessimistic/base/optimistic scenarios (saved to `models/forecast_models.pkl`)## Running the Dashboard
 
     streamlit run dashboard/app.py
 
@@ -80,7 +81,7 @@ Run in order:
 - [x] Task 1 — Data Exploration & Enrichment
 - [x] Task 2 — Exploratory Data Analysis
 - [x] Task 3 — Event Impact Modeling
-- [ ] Task 4 — Forecasting
+- [x] Task 4 — Forecasting
 - [ ] Task 5 — Dashboard
 ## Team
 
