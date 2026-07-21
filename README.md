@@ -63,20 +63,43 @@ Run in order:
 ## Running Tests
 
     pytest tests/ -v
+## Running the Dashboard
 
+    streamlit run dashboard/app.py
+
+Run this command from the project root directory. The dashboard requires
+`data/processed/ethiopia_fi_enriched.csv` and `models/forecast_models.pkl`
+to exist — run notebooks 01 through 04 first if these are missing.
+
+The dashboard has 4 pages (use the sidebar to navigate):
+- **Overview** — key metrics, growth rates, data composition
+- **Trends** — interactive indicator comparison with date range filter
+- **Forecasts** — Access & Usage projections with confidence scenarios
+- **Inclusion Projections** — scenario selector, policy target progress
 ## Methodology Summary
 
-*(fill in as you complete each task — 2-3 sentences each)*
-- **Data enrichment:** Enriched the starter dataset with [N] additional
-  observations, [N] events, and [N] impact_links sourced from [key sources,
-  e.g. NBE, GSMA, Findex microdata]. See `data_enrichment_log.md` for details.
+- **Data enrichment:** Enriched the starter dataset (57 records) with
+  additional observations, events, and impact_links sourced from NBE, GSMA,
+  and Findex materials, including a missing Telebirr→mobile money impact
+  link identified during validation. See `data_enrichment_log.md`.
 - **EDA key findings:** Account ownership grew from 14% (2011) to 49% (2024)
   but decelerated sharply in 2021-2024 (+3pp) despite Telebirr/M-Pesa mobile
   money expansion — likely reflecting overlap between mobile money and
-  existing bank account holders rather than net-new inclusion. [Add 1-2 more
-  sentences on your strongest correlation/gender-gap/infrastructure findings.]
-- **Impact modeling approach:** ...
-- **Forecasting approach:** ...
+  existing bank account holders rather than net-new inclusion.
+- **Impact modeling approach:** Modeled event effects using a logistic
+  ramp-up function with magnitude estimates derived from qualitative
+  high/medium/low labels (5pp/2.5pp/1pp). Validated against observed mobile
+  money growth (2021-2024): modeled +5.00pp vs actual +4.75pp.
+- **Forecasting approach:** Access forecast anchored to the recent
+  (2021-2024) observed growth rate (~1.0pp/year) rather than full-history
+  OLS, since OLS on the full 2011-2024 range overstated near-term growth
+  by averaging in faster early-period gains. Usage forecast anchored to the
+  2024 Findex figure (35%) and projected using mobile money's percentage-
+  point growth rate as a proxy, since no multi-year Usage time series
+  existed in the dataset. Event effects were added incrementally (only
+  the portion not already reflected in historical data) to avoid double-
+  counting. Base case: Access 49.2%→53.6% and Usage 35.8%→39.1% by 2027,
+  with pessimistic/optimistic scenario bands.
 ## Task Status
 - [x] Task 1 — Data Exploration & Enrichment
 - [x] Task 2 — Exploratory Data Analysis
